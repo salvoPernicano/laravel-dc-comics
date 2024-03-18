@@ -18,6 +18,9 @@
             <h3>{{$element['price']}}</h3>
         </div>
         @endforeach
+        <div>
+            <a class="button" role="button" href="{{route('comics.create')}}">Crea</a>
+        </div>
     </div>
 </main>
 @endsection
