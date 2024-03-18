@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\Backend\ComicController;
+use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,5 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ComicController::class, 'index'])
+
+
+Route::get('/', [PageController::class, 'index'])
 ->name('welcome') ;
+
+Route::resource('comics' , ComicController::class);
