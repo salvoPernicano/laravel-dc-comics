@@ -5,7 +5,7 @@
 
 @section('main')
 <main>
-    <h2>Index di Comics</h2>
+    <h2 class="pageHeader">Lista Fumetti</h2>
     <div class="container">
         @foreach($comics as $element)
         <div class="card">
@@ -13,14 +13,16 @@
             <a href="{{route('comics.show', ['comic' => $element['id']])}}">
                 <h2>{{$element['title']}}</h2>
             </a>
-            <p>{{$element['description']}}</p>
-            <h3>{{$element['series']}}</h3>
-            <h3>{{$element['price']}}</h3>
+            <div class="textContainer">
+                <h5>Description: </h5>
+                <p>{{$element['description']}}</p>
+
+            </div>
+            <h3>Serie: {{$element['series']}}</h3>
+            <h3>${{$element['price']}}</h3>
         </div>
         @endforeach
-        <div>
-            <a class="button" role="button" href="{{route('comics.create')}}">Crea</a>
-        </div>
     </div>
+        <a class="button" role="button" href="{{route('comics.create')}}">Inserisci nuovo</a>
 </main>
 @endsection
