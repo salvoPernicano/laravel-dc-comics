@@ -20,11 +20,14 @@
             </div>
             <h3>Serie: {{$element['series']}}</h3>
             <h3>${{$element['price']}}</h3>
-            <form action="{{route('comics.destroy', $element->id)}}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="submit">Delete</button>
-            </form>
+            <div class="btnContainer">
+                <a class="editBtn" href="{{ route('comics.edit', $element->id)}}">Edit</a>
+                <form action="{{route('comics.destroy', $element->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="deleteBtn" type="submit">Delete</button>
+                </form>
+            </div>
         </div>
         @endforeach
     </div>
