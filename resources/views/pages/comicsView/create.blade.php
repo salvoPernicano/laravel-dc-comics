@@ -4,7 +4,7 @@
 
 @section('main')
 <main>
-    <h1>Create new product</h1>
+    <h1 class="pageHeader">Create new product</h1>
     <form action="{{route('comics.store')}}" method="POST">
         @csrf
         <div>
