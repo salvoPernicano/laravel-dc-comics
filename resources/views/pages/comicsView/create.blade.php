@@ -5,11 +5,20 @@
 @section('main')
 <main>
     <h1 class="pageHeader">Create new product</h1>
+    @if ($errors->any())
+    <div class="alert">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <form action="{{route('comics.store')}}" method="POST">
         @csrf
         <div>
             <label for="ComicTitle">Comic Title</label>
-           <input type="text" name="title" id="ComicTitle">
+           <input type="text" name="title" id="ComicTitle" required>
 
         </div>
         <div>
@@ -19,7 +28,7 @@
         </div>
 <div>
     <label for="thumb">Comic Image</label>
-   <input type="text" name="thumb" id="thumb" placeholder="e.g https://www.thisformat">
+   <input type="text" name="thumb" id="thumb" placeholder="e.g https://www.thisformat" required>
 
 </div>
 <div>

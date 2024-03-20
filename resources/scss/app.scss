@@ -43,11 +43,29 @@ main {
         font-size: 1.3rem;
         line-height: 1.5;
         margin-bottom: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; 
+        transition: all .5s ease-out;
+        &:hover{
+            height: auto;
+            overflow: visible;
+            white-space: wrap;
+           
+            filter: drop-shadow(4px 4px 6px black);
+        }
     }
     h3 {
         margin-top: 22px;
         background-color: grey;
         border: 1px solid black;
+        max-height: 30px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; 
+        &:hover{
+            overflow: visible;
+        }
     }
     a {
         color: white;
@@ -64,7 +82,7 @@ main {
         }
     }
     & > .textContainer {
-        height: 100px;
+        max-height: 100px;
         overflow: auto;
         text-overflow: ellipsis;
         padding-inline: 10px;
@@ -153,4 +171,14 @@ form {
     &:hover{
         background-color: rgb(153, 1, 1);
     }
+}
+
+.alert{
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-weight: bold;
+    border : 1px dashed red;
+    background-color: lightsalmon;
+    padding : 2em;
 }
